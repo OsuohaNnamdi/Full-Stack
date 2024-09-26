@@ -42,16 +42,13 @@ const FullLayout = () => {
           backgroundColor: "#ffffff",
         }}
         toggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
-        toggleMobileSidebar={() => setMobileSidebarOpen(true)} // Toggle mobile sidebar
+        toggleMobileSidebar={() => setMobileSidebarOpen(true)}
       />
-
-        <Sidebar
-          isSidebarOpen={isSidebarOpen}
-          isMobileSidebarOpen={isMobileSidebarOpen}
-          onSidebarClose={() => setMobileSidebarOpen(false)}
-        />
-
-
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        isMobileSidebarOpen={isMobileSidebarOpen}
+        onSidebarClose={() => setMobileSidebarOpen(false)}
+      />
       <PageWrapper>
         <Container
           maxWidth={false}
@@ -61,7 +58,7 @@ const FullLayout = () => {
           }}
         >
           <Box sx={{ minHeight: "calc(100vh - 170px)" }}>
-            <Outlet />
+            <Outlet /> {/* Ensure this is present to render child routes */}
           </Box>
         </Container>
       </PageWrapper>
